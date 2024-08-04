@@ -25,8 +25,7 @@ app.use(cors({
     credentials:true,
     origin:'http://localhost:5173',
 }));
-console.log(process.env.MONGO_URL);
-//mongoose.connect(process.env.MONGO_URL);
+
 
 async function uploadS3(path,originalFilename,mimetype){
     const client = new S3Client({
@@ -125,7 +124,7 @@ app.post('/api/upload-link', async (req,res)=>{
     const url = await uploadS3('/tmp/' +name, name, mime.lookup('/tmp/' +name));
     res.json(url);
 });
-const photosMulter = multer({dest:'uploads'});
+const photosMulter = multer({dest:'/tmp'});
 app.post('/api/upload',photosMulter.array('photos',100),async (req,res)=>{
     mongoose.connect(process.env.MONGO_URL);
     const uploads =[];
