@@ -26,7 +26,8 @@ app.use(cors({
     origin: [
         'http://localhost:5173', 
         'https://bvuyyuru-booking-site-clone-theta.vercel.app',
-        'https://booking-site-clone-7ri5hsva3-bvuyyurus-projects.vercel.app'
+        'https://booking-site-clone-7ri5hsva3-bvuyyurus-projects.vercel.app',
+        'https://booking-site-clone-jcnhu8ccc-bvuyyurus-projects.vercel.app/'
     ],
 }));
 
